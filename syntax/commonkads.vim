@@ -24,9 +24,9 @@ syn match   kadsKeywords "set-of"
 syn match   kadsKeywords "value-specification"
 syn match   kadsKeywords "value-type"
 
-syn cluster kadsBlock contains=kadsKnowledgeModel,kadsDomainKnowledge,kadsDomainSchema,kadsConcept,kadsRuleType,kadsMathematicalModel,kadsRelation,kadsBinaryRelation,kadsValueType,kadsKnowledgeBase,kadsInstance,kadsTuple,kadsInferenceKnowledge,kadsInference,kadsTransferFunction,kadsKnowledgeRole,kadsTaskKnowledge,kadsTask,kadsTaskMethod,kadsPsmKnowledge,kadsPsm,kadsOntologyMapping
+" syn cluster kadsBlock contains=kadsKnowledgeModel,kadsDomainKnowledge,kadsDomainSchema,kadsConcept,kadsRuleType,kadsMathematicalModel,kadsRelation,kadsBinaryRelation,kadsValueType,kadsKnowledgeBase,kadsInstance,kadsTuple,kadsInferenceKnowledge,kadsInference,kadsTransferFunction,kadsKnowledgeRole,kadsTaskKnowledge,kadsTask,kadsTaskMethod,kadsPsmKnowledge,kadsPsm,kadsOntologyMapping
 
-syn region kadsKnowledgeModel start="knowledge-model" end="end knowledge-model"
+" syn region kadsKnowledgeModel start="knowledge-model" end="end knowledge-model"
 
 hi def link kadsKeywords       keyword
 
