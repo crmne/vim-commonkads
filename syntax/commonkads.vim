@@ -13,7 +13,7 @@ syn sync minlines=10
 syn case ignore
 
 " Section: keywords
-syn keyword kadsKeywords attributes specification concept use end type ordinal nominal description axioms antecedent consequent uses expressions from roles input output static inference task goal roles realizes decomposition intermediate while repeat until empty and or real add
+syn keyword kadsKeywords attributes specification concept use end type ordinal nominal description axioms antecedent consequent uses expressions from roles input output static inference task goal roles realizes decomposition intermediate while repeat until empty and or real add delete
 syn match   kadsKeywords "domain-schema"
 syn match   kadsKeywords "knowledge-base"
 syn match   kadsKeywords "knowledge-model"
