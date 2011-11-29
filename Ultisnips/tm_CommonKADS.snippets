@@ -1,0 +1,124 @@
+snippet attr "Argument"
+${1:name}: ${2:type};
+endsnippet
+
+snippet axiom "Axioms"
+AXIOMS: 
+    ${1:expr};
+endsnippet
+
+snippet binrel "Binary-Relation"
+BINARY-RELATION ${1:name};
+  DESCRIPTION:
+    "${2:description}";
+  ARGUMENT-1: ${3:class};
+    CARDINALITY: ${4:0+ 1+ 0-3};
+  ARGUMENT-2: ${5:argument-name};
+    CARDINALITY: ${6:0+ 1+ 0-3};
+END BINARY-RELATION $1;
+$0
+endsnippet
+
+snippet conc "Concept"
+CONCEPT ${1:name};
+  DESCRIPTION:
+    "${2:desctription}";
+  ATTRIBUTES:
+    ${3:name}: ${4:type};
+END CONCEPT $1;
+$0
+endsnippet
+
+snippet inference "Inference"
+INFERENCE ${1:name};
+  ROLES:
+    INPUT:
+      ${2:dyn-knowledge-role};
+    OUTPUT:
+      ${3:dyn-knowledge-role};
+    STATIC:
+      ${4:static-knowledge-role};
+  SPECIFICATION:
+    "${5:Spec description}";
+END INFERENCE $1;
+
+endsnippet
+
+snippet kbase "Knowledge Base"
+KNOWLEDGE-BASE ${1:name}; 
+  USES:
+    ${2:rule-type} FROM ${3:schema}; 
+  EXPRESSIONS:
+    $0
+END KNOWLEDGE-BASE $1;
+
+endsnippet
+
+snippet krole "Knowledge Role"
+KNOWLEDGE-ROLE ${1:name};
+  TYPE: ${2:DYNAMIC|STATIC};
+  DOMAIN-MAPPING:
+    ${3:schema-element or construct type}
+END KNOWLEDGE-ROLE $1;
+
+endsnippet
+
+snippet ruletype "Rule-Type"
+RULE-TYPE ${1:name}; 
+  ANTECEDENT:
+    ${2:name}; 
+      CARDINALITY: ${3:0+ 1+ 0-3};
+  CONSEQUENT: 
+    ${4:name};
+      CARDINALITY: ${5:0+ 1+ 0-3}; 
+  CONNECTION-SYMBOL:
+    ${6:symbol};
+END RULE-TYPE $1;
+$0
+
+endsnippet
+
+snippet sconc "SubConcept"
+CONCEPT ${1:name};
+  SUB-TYPE-OF: ${2:supertype};
+  DESCRIPTION:
+    "${3:desctription}";
+END CONCEPT $1;
+$0
+endsnippet
+
+snippet taskmethod "Task Method"
+TASK-METHOD ${1:name}; 
+  REALIZES:
+    ${2:task name}; 
+  DECOMPOSITION:
+    ${3:TASKS | INFERENCE}: ${4: list}; 
+  ROLES:
+    INTERMEDIATE: 
+      ${5:variables}: "${6:variable description}";
+  CONTROL-STRUCTURE:
+    ${7:algorithm} 
+END TASK-METHOD $1;
+endsnippet
+
+snippet task "Task"
+TASK ${1:name}; 
+  DOMAIN-NAME: ${2:domain-name}; 
+  GOAL: "${3:goal}"; 
+  ROLES:
+    INPUT: 
+      ${4:inputs}
+    OUTPUT: 
+      ${5: goal} : "${6:descpt}";
+END TASK $1;
+
+endsnippet
+
+snippet value "Value-type"
+VALUE-TYPE ${1:name};
+  TYPE: ${2:NOMINAL};
+  VALUE-LIST: {${3:items}};
+END VALUE-TYPE $1;
+$0
+endsnippet
+
